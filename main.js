@@ -1,6 +1,4 @@
-/**
- * Lógica para alternar o tema (claro/escuro)
- */
+/* Lógica para alternar o tema (claro/escuro) */
 const themeToggle = document.querySelector(".theme-toggle");
 const themeToggleMobile = document.querySelector(".theme-toggle-mobile");
 const body = document.body;
@@ -24,10 +22,7 @@ const toggleTheme = () => {
 themeToggle.addEventListener("click", toggleTheme);
 themeToggleMobile.addEventListener("click", toggleTheme);
 
-
-/**
- * Lógica para o menu mobile
- */
+/* Lógica para o menu mobile */
 const setupMobileMenu = () => {
   const hamburgerBtn = document.getElementById('hamburger-menu');
   const closeMenuBtn = document.getElementById('close-menu-btn');
@@ -36,24 +31,18 @@ const setupMobileMenu = () => {
 
   if (!hamburgerBtn || !closeMenuBtn || !mobileMenu) return;
 
-  // Função para abrir o menu
   const openMenu = () => body.classList.add('mobile-menu-open');
-  // Função para fechar o menu
   const closeMenu = () => body.classList.remove('mobile-menu-open');
 
   hamburgerBtn.addEventListener('click', openMenu);
   closeMenuBtn.addEventListener('click', closeMenu);
   
-  // Fecha o menu ao clicar em um link
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 };
 
-
-/**
- * Lógica para copiar texto para a área de transferência
- */
+/* Lógica para copiar texto para a área de transferência */
 const setupCopyToClipboard = () => {
   const copyButtons = document.querySelectorAll(".copy-button");
   copyButtons.forEach((button) => {
@@ -73,10 +62,7 @@ const setupCopyToClipboard = () => {
   });
 };
 
-
-/**
- * Lógica para o botão "Voltar ao Topo"
- */
+/* Lógica para o botão "Voltar ao Topo" */
 const setupBackToTopButton = () => {
   const backToTopBtn = document.getElementById("back-to-top-btn");
   if (!backToTopBtn) return;
@@ -98,10 +84,7 @@ const setupBackToTopButton = () => {
   });
 };
 
-
-/**
- * Lógica para a animação de Fade-in das seções
- */
+/* Lógica para a animação de fade-in das seções */
 const setupScrollAnimation = () => {
   const sections = document.querySelectorAll('.fade-in-section');
   if (!sections.length) return;
@@ -124,15 +107,11 @@ const setupScrollAnimation = () => {
   });
 };
 
-
-/**
- * Executa as funções quando o documento estiver pronto
- */
 document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem(themeKey) || "dark";
   applyTheme(savedTheme);
 
-  setupMobileMenu(); // Ativa a funcionalidade do menu mobile
+  setupMobileMenu();
   setupCopyToClipboard();
   setupBackToTopButton();
   setupScrollAnimation();
