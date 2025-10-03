@@ -909,12 +909,20 @@ body {
     font-size: 24px;
     line-height: 32px;
   }
+  .contact-item svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media (max-width: 480px) {
   .contact-item a {
     font-size: 14px;
     line-height: 28px;
+  }
+  .contact-item svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
