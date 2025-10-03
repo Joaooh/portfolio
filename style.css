@@ -95,14 +95,12 @@ body {
 }
 
 .fade-in-section {
-  /* Estado inicial: invisível e levemente deslocado para baixo */
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .fade-in-section.visible {
-  /* Estado final: visível e na posição original */
   opacity: 1;
   transform: translateY(0);
 }
@@ -980,7 +978,7 @@ body {
   }
 }
 
-/* Botão Voltar ao Topo */
+/* Botão "Voltar ao Topo" */
 .back-to-top-btn {
   position: fixed;
   bottom: 30px;
